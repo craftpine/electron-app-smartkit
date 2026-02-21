@@ -3,4 +3,5 @@ export type Tool = {
   name: string
   icon: React.ComponentType<{ className?: string }>
   component: React.ComponentType
+  children?: Tool[]
 }

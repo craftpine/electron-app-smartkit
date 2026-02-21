@@ -10,8 +10,19 @@ type LayoutProps = {
 export default function Layout({ children, tools = SAMPLE_TOOLS }: LayoutProps) {
   const [activeTool, setActiveTool] = useState(tools[0]?.id || '')
 
-  // Find the active tool component
-  const activeToolData = tools.find((tool) => tool.id === activeTool)
+  // Find the active tool component (search recursively for nested tools)
+  const findTool = (toolId: string, toolsList: Tool[] = tools): Tool | undefined => {
+    for (const tool of toolsList) {
+      if (tool.id === toolId) return tool
+      if (tool.children) {
+        const found = findTool(toolId, tool.children)
+        if (found) return found
+      }
+    }
+    return undefined
+  }
+
+  const activeToolData = findTool(activeTool)
   const ToolComponent = activeToolData?.component || (() => <div>Select a tool</div>)
 
   return (

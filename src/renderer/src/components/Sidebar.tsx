@@ -1,7 +1,8 @@
 import ToolItem from './ToolItem'
-import { ScrollArea } from './ui'
+import { ScrollArea, Accordion, AccordionItem, AccordionTrigger, AccordionContent } from './ui'
 import { Tool } from '../types/tool'
-import { FileJson, Code, Search, Clock, Lock, Calculator } from 'lucide-react'
+import { FileJson, Code, Search, Clock, Lock, Calculator, DollarSign, Ruler, Bitcoin, Brackets, PiIcon, Image, ImageIcon, Braces, Wind, FileCode, Shuffle, Wand2 } from 'lucide-react'
+import HtmlToJsx from './tools/HtmlToJsx'
 
 type SidebarProps = {
   tools: Tool[]
@@ -21,14 +22,41 @@ export default function Sidebar({ tools, activeTool, onSelectTool }: SidebarProp
       {/* Tools List */}
       <ScrollArea className="flex-1 flex flex-col">
         <div className="px-3 py-4 space-y-1">
-          {tools.map((tool) => (
-            <ToolItem
-              key={tool.id}
-              tool={tool}
-              isActive={activeTool === tool.id}
-              onClick={() => onSelectTool(tool.id)}
-            />
-          ))}
+          <Accordion type="multiple" className="w-full">
+            {tools.map((tool) => {
+              if (tool.children && tool.children.length > 0) {
+                return (
+                  <AccordionItem key={tool.id} value={tool.id} className="border-0">
+                    <AccordionTrigger className="px-4 py-2 h-10 rounded-md hover:bg-gray-100 text-gray-700 font-normal">
+                      <div className="flex items-center gap-3">
+                        {tool.icon && <tool.icon className="w-4 h-4" />}
+                        <span className="text-sm">{tool.name}</span>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="pl-8 py-1">
+                      {tool.children.map((child) => (
+                        <ToolItem
+                          key={child.id}
+                          tool={child}
+                          isActive={activeTool === child.id}
+                          onClick={() => onSelectTool(child.id)}
+                        />
+                      ))}
+                    </AccordionContent>
+                  </AccordionItem>
+                )
+              } else {
+                return (
+                  <ToolItem
+                    key={tool.id}
+                    tool={tool}
+                    isActive={activeTool === tool.id}
+                    onClick={() => onSelectTool(tool.id)}
+                  />
+                )
+              }
+            })}
+          </Accordion>
         </div>
       </ScrollArea>
 
@@ -43,39 +71,79 @@ export default function Sidebar({ tools, activeTool, onSelectTool }: SidebarProp
 // Sample tools with icons
 export const SAMPLE_TOOLS: Tool[] = [
   {
-    id: 'json',
-    name: 'JSON Formatter',
-    icon: FileJson,
-    component: () => <div className="p-4">JSON Formatter Tool</div>,
+    id: 'converters',
+    name: 'Converters',
+    icon: Shuffle,
+    component: () => <div className="p-4">Converters</div>,
+    children: [
+      {
+        id: 'html-to-jsx',
+        name: 'HTML to JSX',
+        icon: Brackets,
+        component: HtmlToJsx,
+      },
+      {
+        id: 'html-to-pug',
+        name: 'HTML to Pug',
+        icon: PiIcon,
+        component: () => <div className="p-4">HTML to Pug Tool</div>,
+      },
+      {
+        id: 'money-converter',
+        name: 'Money Converter',
+        icon: DollarSign,
+        component: () => <div className="p-4">Money Converter Tool</div>,
+      },
+      {
+        id: 'unit-converter',
+        name: 'Unit Converter',
+        icon: Ruler,
+        component: () => <div className="p-4">Unit Converter Tool</div>,
+      },
+      {
+        id: 'crypto-converter',
+        name: 'Crypto Converter',
+        icon: Bitcoin,
+        component: () => <div className="p-4">Crypto Converter Tool</div>,
+      },
+      {
+        id: 'image-converter',
+        name: 'Image Converter',
+        icon: Image,
+        component: () => <div className="p-4">Image Converter Tool</div>,
+      },
+      {
+        id: 'svg-converter',
+        name: 'SVG Converter',
+        icon: ImageIcon,
+        component: () => <div className="p-4">SVG Converter Tool</div>,
+      },
+    ],
   },
   {
-    id: 'base64',
-    name: 'Base64 Encode/Decode',
-    icon: Code,
-    component: () => <div className="p-4">Base64 Tool</div>,
-  },
-  {
-    id: 'regex',
-    name: 'Regex Tester',
-    icon: Search,
-    component: () => <div className="p-4">Regex Tool</div>,
-  },
-  {
-    id: 'timestamp',
-    name: 'Timestamp Converter',
-    icon: Clock,
-    component: () => <div className="p-4">Timestamp Tool</div>,
-  },
-  {
-    id: 'hash',
-    name: 'Hash Generator',
-    icon: Lock,
-    component: () => <div className="p-4">Hash Tool</div>,
-  },
-  {
-    id: 'calculator',
-    name: 'Calculator',
-    icon: Calculator,
-    component: () => <div className="p-4">Calculator Tool</div>,
+    id: 'transforms',
+    name: 'Transforms',
+    icon: Wand2,
+    component: () => <div className="p-4">Transforms</div>,
+    children: [
+      {
+        id: 'json-to-typescript',
+        name: 'JSON to TypeScript',
+        icon: Braces,
+        component: () => <div className="p-4">JSON to TypeScript Tool</div>,
+      },
+      {
+        id: 'css-to-tailwind',
+        name: 'CSS to Tailwind',
+        icon: Wind,
+        component: () => <div className="p-4">CSS to Tailwind Tool</div>,
+      },
+      {
+        id: 'javascript-to-typescript',
+        name: 'JavaScript to TypeScript',
+        icon: FileCode,
+        component: () => <div className="p-4">JavaScript to TypeScript Tool</div>,
+      },
+    ],
   },
 ]
