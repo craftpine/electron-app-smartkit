@@ -24,6 +24,7 @@
     "@electron-toolkit/preload": "^3.0.2",
     "@electron-toolkit/utils": "^4.0.0",
     "electron-updater": "^6.3.9",
+    "lucide-react": "^0.575.0",
     "shadcn-ui": "^0.9.5"
   },
   "devDependencies": {
