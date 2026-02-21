@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import { Copy, RefreshCw } from 'lucide-react'
+import { useState } from 'react'
 
 export default function HtmlToJsx() {
   const [html, setHtml] = useState('')

@@ -1,8 +1,8 @@
-import ToolItem from './ToolItem'
-import { ScrollArea, Accordion, AccordionItem, AccordionTrigger, AccordionContent } from './ui'
+import { Bitcoin, Braces, Brackets, DollarSign, FileCode, Image, ImageIcon, PiIcon, Ruler, Shuffle, Wand2, Wind } from 'lucide-react'
 import { Tool } from '../types/tool'
-import { FileJson, Code, Search, Clock, Lock, Calculator, DollarSign, Ruler, Bitcoin, Brackets, PiIcon, Image, ImageIcon, Braces, Wind, FileCode, Shuffle, Wand2 } from 'lucide-react'
+import ToolItem from './ToolItem'
 import HtmlToJsx from './tools/HtmlToJsx'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, ScrollArea } from './ui'
 
 type SidebarProps = {
   tools: Tool[]
