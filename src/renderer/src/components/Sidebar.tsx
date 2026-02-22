@@ -3,6 +3,7 @@ import { Tool } from '../types/tool'
 import ToolItem from './ToolItem'
 import HtmlToJsx from './tools/HtmlToJsx'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, ScrollArea } from './ui'
+import HtmlToPug from './tools/HtmlToPug'
 
 type SidebarProps = {
   tools: Tool[]
@@ -86,7 +87,7 @@ export const SAMPLE_TOOLS: Tool[] = [
         id: 'html-to-pug',
         name: 'HTML to Pug',
         icon: PiIcon,
-        component: () => <div className="p-4">HTML to Pug Tool</div>,
+        component: HtmlToPug,
       },
       {
         id: 'money-converter',
