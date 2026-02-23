@@ -4,6 +4,7 @@ import ToolItem from './ToolItem'
 import HtmlToJsx from './tools/HtmlToJsx'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, ScrollArea } from './ui'
 import HtmlToPug from './tools/HtmlToPug'
+import ImageConverter from './tools/ImageConverter'
 
 type SidebarProps = {
   tools: Tool[]
@@ -111,7 +112,7 @@ export const SAMPLE_TOOLS: Tool[] = [
         id: 'image-converter',
         name: 'Image Converter',
         icon: Image,
-        component: () => <div className="p-4">Image Converter Tool</div>,
+        component: ImageConverter,
       },
       {
         id: 'svg-converter',
