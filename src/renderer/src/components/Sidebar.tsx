@@ -5,6 +5,7 @@ import HtmlToJsx from './tools/HtmlToJsx'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, ScrollArea } from './ui'
 import HtmlToPug from './tools/HtmlToPug'
 import ImageConverter from './tools/ImageConverter'
+import SvgToJsx from './tools/SvgToJsx'
 
 type SidebarProps = {
   tools: Tool[]
@@ -116,9 +117,9 @@ export const SAMPLE_TOOLS: Tool[] = [
       },
       {
         id: 'svg-converter',
-        name: 'SVG Converter',
+        name: 'SVG to JSX',
         icon: ImageIcon,
-        component: () => <div className="p-4">SVG Converter Tool</div>,
+        component: SvgToJsx,
       },
     ],
   },
