@@ -7,6 +7,8 @@ import HtmlToPug from './tools/HtmlToPug'
 import ImageConverter from './tools/ImageConverter'
 import SvgToJsx from './tools/SvgToJsx'
 import JsonToTypescript from './tools/JsonToTypescript'
+import CssToTailwind from './tools/CssToTailwind'
+import JavascriptToTypescript from './tools/JavascriptToTypescript'
 
 type SidebarProps = {
   tools: Tool[]
@@ -140,13 +142,13 @@ export const SAMPLE_TOOLS: Tool[] = [
         id: 'css-to-tailwind',
         name: 'CSS to Tailwind',
         icon: Wind,
-        component: () => <div className="p-4">CSS to Tailwind Tool</div>,
+        component: CssToTailwind,
       },
       {
         id: 'javascript-to-typescript',
         name: 'JavaScript to TypeScript',
         icon: FileCode,
-        component: () => <div className="p-4">JavaScript to TypeScript Tool</div>,
+        component: JavascriptToTypescript,
       },
     ],
   },
