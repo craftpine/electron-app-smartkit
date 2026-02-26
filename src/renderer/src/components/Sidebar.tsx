@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, ScrollAre
 import HtmlToPug from './tools/HtmlToPug'
 import ImageConverter from './tools/ImageConverter'
 import SvgToJsx from './tools/SvgToJsx'
+import JsonToTypescript from './tools/JsonToTypescript'
 
 type SidebarProps = {
   tools: Tool[]
@@ -133,7 +134,7 @@ export const SAMPLE_TOOLS: Tool[] = [
         id: 'json-to-typescript',
         name: 'JSON to TypeScript',
         icon: Braces,
-        component: () => <div className="p-4">JSON to TypeScript Tool</div>,
+        component: JsonToTypescript,
       },
       {
         id: 'css-to-tailwind',
