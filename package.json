@@ -27,6 +27,7 @@
     "electron-updater": "^6.3.9",
     "heic2any": "^0.0.4",
     "lucide-react": "^0.575.0",
+    "pako": "^2.1.0",
     "shadcn-ui": "^0.9.5"
   },
   "devDependencies": {

@@ -1,4 +1,4 @@
-import { Bitcoin, Braces, Brackets, DollarSign, FileCode, Image, ImageIcon, PiIcon, Ruler, Shuffle, Wand2, Wind } from 'lucide-react'
+import { Archive, Bitcoin, Braces, Brackets, Code, DollarSign, FileCode, FileImage, Image, ImageIcon, PiIcon, Ruler, ShieldCheck, Shuffle, Wand2, Wind } from 'lucide-react'
 import { Tool } from '../types/tool'
 import ToolItem from './ToolItem'
 import HtmlToJsx from './tools/HtmlToJsx'
@@ -9,6 +9,10 @@ import SvgToJsx from './tools/SvgToJsx'
 import JsonToTypescript from './tools/JsonToTypescript'
 import CssToTailwind from './tools/CssToTailwind'
 import JavascriptToTypescript from './tools/JavascriptToTypescript'
+import Base64Image from './tools/Base64Image'
+import CertificateDecoder from './tools/CertificateDecoder'
+import GzipEncoder from './tools/GzipEncoder'
+import HtmlEncoder from './tools/HtmlEncoder'
 
 type SidebarProps = {
   tools: Tool[]
@@ -152,4 +156,36 @@ export const SAMPLE_TOOLS: Tool[] = [
       },
     ],
   },
+  {
+    id: "encoders/decoders",
+    name: "Encoders / Decoders",
+    icon: Code,
+    component: () => <div className="p-4">Encoders/Decoders</div>,
+    children: [
+      {
+        id: 'base64-image',
+        name: 'Base64 Image',
+        icon: FileImage,
+        component: Base64Image,
+      },
+      {
+        id: 'html-encoder',
+        name: 'HTML Encoder',
+        icon: Code,
+        component: HtmlEncoder,
+      },
+      {
+        id: 'gzip-encoder',
+        name: 'Gzip Encoder',
+        icon: Archive,
+        component: GzipEncoder,
+      },
+      {
+        id: 'certificate-decoder',
+        name: 'Certificate Decoder',
+        icon: ShieldCheck,
+        component: CertificateDecoder,
+      },
+    ]
+  }
 ]
