@@ -169,6 +169,12 @@ export const SAMPLE_TOOLS: Tool[] = [
         component: Base64Image,
       },
       {
+        id: 'base64-text',
+        name: 'Base64 Text',
+        icon: FileCode,
+        component: () => <div className="p-4">Base64 Text Encoder/Decoder</div>,
+      },
+      {
         id: 'html-encoder',
         name: 'HTML Encoder',
         icon: Code,
