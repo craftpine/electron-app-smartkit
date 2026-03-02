@@ -193,6 +193,12 @@ export const SAMPLE_TOOLS: Tool[] = [
         icon: ShieldCheck,
         component: CertificateDecoder,
       },
+      {
+        id: 'jwt-decoder',
+        name: 'JWT Decoder',
+        icon: ShieldCheck,
+        component: () => <div className="p-4">JWT Decoder Tool</div>,
+      }
     ]
   }
 ]
