@@ -14,6 +14,9 @@ import Base64Text from './tools/Base64Text'
 import CertificateDecoder from './tools/CertificateDecoder'
 import GzipEncoder from './tools/GzipEncoder'
 import HtmlEncoder from './tools/HtmlEncoder'
+import JwtDecoder from './tools/JwtDecoder'
+import JwtEncoder from './tools/JwtEncoder'
+import JwtValidator from './tools/JwtValidator'
 
 type SidebarProps = {
   tools: Tool[]
@@ -197,7 +200,19 @@ export const SAMPLE_TOOLS: Tool[] = [
         id: 'jwt-decoder',
         name: 'JWT Decoder',
         icon: ShieldCheck,
-        component: () => <div className="p-4">JWT Decoder Tool</div>,
+        component: JwtDecoder,
+      },
+      {
+        id: 'jwt-encoder',
+        name: 'JWT Encoder',
+        icon: ShieldCheck,
+        component: JwtEncoder,
+      },
+      {
+        id: 'jwt-validator',
+        name: 'JWT Validator',
+        icon: ShieldCheck,
+        component: JwtValidator,
       }
     ]
   }
