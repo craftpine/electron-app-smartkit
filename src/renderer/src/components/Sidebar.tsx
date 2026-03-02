@@ -10,6 +10,7 @@ import JsonToTypescript from './tools/JsonToTypescript'
 import CssToTailwind from './tools/CssToTailwind'
 import JavascriptToTypescript from './tools/JavascriptToTypescript'
 import Base64Image from './tools/Base64Image'
+import Base64Text from './tools/Base64Text'
 import CertificateDecoder from './tools/CertificateDecoder'
 import GzipEncoder from './tools/GzipEncoder'
 import HtmlEncoder from './tools/HtmlEncoder'
@@ -172,7 +173,7 @@ export const SAMPLE_TOOLS: Tool[] = [
         id: 'base64-text',
         name: 'Base64 Text',
         icon: FileCode,
-        component: () => <div className="p-4">Base64 Text Encoder/Decoder</div>,
+        component: Base64Text,
       },
       {
         id: 'html-encoder',
