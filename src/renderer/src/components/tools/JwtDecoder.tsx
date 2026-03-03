@@ -77,13 +77,10 @@ export default function JwtDecoder() {
     setInput('')
     setDecoded(null)
     setError('')
-    setCopied(false)
   }
 
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
   }
 
   return (

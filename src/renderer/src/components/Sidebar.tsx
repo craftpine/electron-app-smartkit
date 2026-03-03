@@ -17,6 +17,7 @@ import HtmlEncoder from './tools/HtmlEncoder'
 import JwtDecoder from './tools/JwtDecoder'
 import JwtEncoder from './tools/JwtEncoder'
 import JwtValidator from './tools/JwtValidator'
+import LoremIpsum from './tools/LoremIpsum'
 
 type SidebarProps = {
   tools: Tool[]
@@ -213,6 +214,20 @@ export const SAMPLE_TOOLS: Tool[] = [
         name: 'JWT Validator',
         icon: ShieldCheck,
         component: JwtValidator,
+      }
+    ]
+  },
+  {
+    id: 'generators',
+    name: 'Generators',
+    icon: PiIcon,
+    component: () => <div className="p-4">Generators</div>,
+    children: [
+      {
+        id: 'lorem-ipsum',
+        name: 'Lorem Ipsum',
+        icon: Braces,
+        component: LoremIpsum,
       }
     ]
   }
