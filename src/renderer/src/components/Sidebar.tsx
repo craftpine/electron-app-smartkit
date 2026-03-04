@@ -18,6 +18,7 @@ import JwtDecoder from './tools/JwtDecoder'
 import JwtEncoder from './tools/JwtEncoder'
 import JwtValidator from './tools/JwtValidator'
 import LoremIpsum from './tools/LoremIpsum'
+import UuidGenerator from './tools/UuidGenerator'
 
 type SidebarProps = {
   tools: Tool[]
@@ -228,6 +229,12 @@ export const SAMPLE_TOOLS: Tool[] = [
         name: 'Lorem Ipsum',
         icon: Braces,
         component: LoremIpsum,
+      },
+      {
+        id: 'uuid-generator',
+        name: 'UUID Generator',
+        icon: Braces,
+        component: UuidGenerator,
       }
     ]
   }
