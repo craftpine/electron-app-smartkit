@@ -19,6 +19,7 @@ import JwtEncoder from './tools/JwtEncoder'
 import JwtValidator from './tools/JwtValidator'
 import LoremIpsum from './tools/LoremIpsum'
 import UuidGenerator from './tools/UuidGenerator'
+import PasswordGenerator from './tools/PasswordGenerator'
 
 type SidebarProps = {
   tools: Tool[]
@@ -240,7 +241,7 @@ export const SAMPLE_TOOLS: Tool[] = [
         id: 'password-generator',
         name: 'Password Generator',
         icon: Braces,
-        component: () => <div className="p-4">Password Generator Tool</div>,
+        component: PasswordGenerator,
       }
     ]
   }
