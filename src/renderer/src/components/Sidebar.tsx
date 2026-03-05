@@ -235,6 +235,12 @@ export const SAMPLE_TOOLS: Tool[] = [
         name: 'UUID Generator',
         icon: Braces,
         component: UuidGenerator,
+      },
+      {
+        id: 'password-generator',
+        name: 'Password Generator',
+        icon: Braces,
+        component: () => <div className="p-4">Password Generator Tool</div>,
       }
     ]
   }
