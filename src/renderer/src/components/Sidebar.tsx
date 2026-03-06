@@ -242,6 +242,12 @@ export const SAMPLE_TOOLS: Tool[] = [
         name: 'Password Generator',
         icon: Braces,
         component: PasswordGenerator,
+      },
+      {
+        id: 'hash-checksum-generator',
+        name: 'Hash/Checksum Generator',
+        icon: Braces,
+        component: () => <div className="p-4">Hash/Checksum Generator Tool</div>,
       }
     ]
   }
