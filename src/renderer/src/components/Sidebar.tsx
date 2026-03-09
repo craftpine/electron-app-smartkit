@@ -1,4 +1,4 @@
-import { Archive, Bitcoin, Braces, Brackets, Code, DollarSign, FileCode, FileImage, Image, ImageIcon, PiIcon, Ruler, ShieldCheck, Shuffle, Wand2, Wind } from 'lucide-react'
+import { Archive, Bitcoin, Braces, Brackets, Code, DollarSign, FileCode, FileImage, Fingerprint, Hash, Image, ImageIcon, KeyRound, PiIcon, Ruler, ShieldCheck, Shuffle, Type, Wand2, Wind } from 'lucide-react'
 import { Tool } from '../types/tool'
 import ToolItem from './ToolItem'
 import HtmlToJsx from './tools/HtmlToJsx'
@@ -216,6 +216,12 @@ export const SAMPLE_TOOLS: Tool[] = [
         name: 'JWT Validator',
         icon: ShieldCheck,
         component: JwtValidator,
+      },
+      {
+        id: 'qr-code-generator',
+        name: 'QR Code Generator',
+        icon: ImageIcon,
+        component: () => <div className="p-4">QR Code Generator Tool</div>,
       }
     ]
   },
@@ -228,25 +234,25 @@ export const SAMPLE_TOOLS: Tool[] = [
       {
         id: 'lorem-ipsum',
         name: 'Lorem Ipsum',
-        icon: Braces,
+        icon: Type,
         component: LoremIpsum,
       },
       {
         id: 'uuid-generator',
         name: 'UUID Generator',
-        icon: Braces,
+        icon: Fingerprint,
         component: UuidGenerator,
       },
       {
         id: 'password-generator',
         name: 'Password Generator',
-        icon: Braces,
+        icon: KeyRound,
         component: PasswordGenerator,
       },
       {
         id: 'hash-checksum-generator',
         name: 'Hash/Checksum Generator',
-        icon: Braces,
+        icon: Hash,
         component: () => <div className="p-4">Hash/Checksum Generator Tool</div>,
       }
     ]
