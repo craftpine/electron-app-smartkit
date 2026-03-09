@@ -1,4 +1,4 @@
-import { Archive, Bitcoin, Braces, Brackets, Code, DollarSign, FileCode, FileImage, Fingerprint, Hash, Image, ImageIcon, KeyRound, PiIcon, Ruler, ShieldCheck, Shuffle, Type, Wand2, Wind } from 'lucide-react'
+import { Archive, Award, BadgeCheck, Bitcoin, Braces, Brackets, Code, DollarSign, FileCode, FileImage, FileText, Fingerprint, Globe, Hash, Image, ImageIcon, KeyRound, Lock, PiIcon, QrCode, Ruler, Shuffle, Type, Unlock, Wand2, Wind } from 'lucide-react'
 import { Tool } from '../types/tool'
 import ToolItem from './ToolItem'
 import HtmlToJsx from './tools/HtmlToJsx'
@@ -178,13 +178,13 @@ export const SAMPLE_TOOLS: Tool[] = [
       {
         id: 'base64-text',
         name: 'Base64 Text',
-        icon: FileCode,
+        icon: FileText,
         component: Base64Text,
       },
       {
         id: 'html-encoder',
         name: 'HTML Encoder',
-        icon: Code,
+        icon: Globe,
         component: HtmlEncoder,
       },
       {
@@ -196,31 +196,31 @@ export const SAMPLE_TOOLS: Tool[] = [
       {
         id: 'certificate-decoder',
         name: 'Certificate Decoder',
-        icon: ShieldCheck,
+        icon: Award,
         component: CertificateDecoder,
       },
       {
         id: 'jwt-decoder',
         name: 'JWT Decoder',
-        icon: ShieldCheck,
+        icon: Unlock,
         component: JwtDecoder,
       },
       {
         id: 'jwt-encoder',
         name: 'JWT Encoder',
-        icon: ShieldCheck,
+        icon: Lock,
         component: JwtEncoder,
       },
       {
         id: 'jwt-validator',
         name: 'JWT Validator',
-        icon: ShieldCheck,
+        icon: BadgeCheck,
         component: JwtValidator,
       },
       {
         id: 'qr-code-generator',
         name: 'QR Code Generator',
-        icon: ImageIcon,
+        icon: QrCode,
         component: () => <div className="p-4">QR Code Generator Tool</div>,
       }
     ]
