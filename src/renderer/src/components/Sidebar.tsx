@@ -20,6 +20,7 @@ import JwtValidator from './tools/JwtValidator'
 import LoremIpsum from './tools/LoremIpsum'
 import UuidGenerator from './tools/UuidGenerator'
 import PasswordGenerator from './tools/PasswordGenerator'
+import HashChecksumGenerator from './tools/HashChecksumGenerator'
 
 type SidebarProps = {
   tools: Tool[]
@@ -253,7 +254,7 @@ export const SAMPLE_TOOLS: Tool[] = [
         id: 'hash-checksum-generator',
         name: 'Hash/Checksum Generator',
         icon: Hash,
-        component: () => <div className="p-4">Hash/Checksum Generator Tool</div>,
+        component: HashChecksumGenerator,
       }
     ]
   }
