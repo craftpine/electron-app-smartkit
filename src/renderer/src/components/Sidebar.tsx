@@ -223,6 +223,12 @@ export const SAMPLE_TOOLS: Tool[] = [
         name: 'QR Code Generator',
         icon: QrCode,
         component: () => <div className="p-4">QR Code Generator Tool</div>,
+      },
+      {
+        id: 'url',
+        name: 'URL Encoder/Decoder',
+        icon: Globe,
+        component: () => <div className="p-4">URL Encoder/Decoder Tool</div>,
       }
     ]
   },
