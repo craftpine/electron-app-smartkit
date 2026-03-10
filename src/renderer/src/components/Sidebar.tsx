@@ -21,6 +21,7 @@ import LoremIpsum from './tools/LoremIpsum'
 import UuidGenerator from './tools/UuidGenerator'
 import PasswordGenerator from './tools/PasswordGenerator'
 import HashChecksumGenerator from './tools/HashChecksumGenerator'
+import QRCodeGenerator from './tools/QRCodeGenerator'
 
 type SidebarProps = {
   tools: Tool[]
@@ -222,7 +223,7 @@ export const SAMPLE_TOOLS: Tool[] = [
         id: 'qr-code-generator',
         name: 'QR Code Generator',
         icon: QrCode,
-        component: () => <div className="p-4">QR Code Generator Tool</div>,
+        component: QRCodeGenerator,
       },
       {
         id: 'url',
