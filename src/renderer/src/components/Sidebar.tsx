@@ -22,6 +22,7 @@ import UuidGenerator from './tools/UuidGenerator'
 import PasswordGenerator from './tools/PasswordGenerator'
 import HashChecksumGenerator from './tools/HashChecksumGenerator'
 import QRCodeGenerator from './tools/QRCodeGenerator'
+import UrlEncoder from './tools/UrlEncoder'
 
 type SidebarProps = {
   tools: Tool[]
@@ -229,7 +230,7 @@ export const SAMPLE_TOOLS: Tool[] = [
         id: 'url',
         name: 'URL Encoder/Decoder',
         icon: Globe,
-        component: () => <div className="p-4">URL Encoder/Decoder Tool</div>,
+        component: UrlEncoder,
       }
     ]
   },
