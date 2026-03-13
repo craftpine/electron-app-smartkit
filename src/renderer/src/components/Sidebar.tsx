@@ -23,6 +23,7 @@ import PasswordGenerator from './tools/PasswordGenerator'
 import HashChecksumGenerator from './tools/HashChecksumGenerator'
 import QRCodeGenerator from './tools/QRCodeGenerator'
 import UrlEncoder from './tools/UrlEncoder'
+import TextDiff from './tools/TextDiff'
 
 type SidebarProps = {
   tools: Tool[]
@@ -258,7 +259,7 @@ export const SAMPLE_TOOLS: Tool[] = [
         id: 'text-diff',
         name: 'Text Diff',
         icon: Ruler,
-        component: () => <div className="p-4">Text Diff Tool</div>,
+        component: TextDiff,
       }
     ]
   }
