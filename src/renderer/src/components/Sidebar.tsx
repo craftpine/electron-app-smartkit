@@ -247,5 +247,19 @@ export const SAMPLE_TOOLS: Tool[] = [
         component: HashChecksumGenerator,
       }
     ]
+  },
+  {
+    id: 'text',
+    name: 'Text Tools',
+    icon: Type,
+    component: () => <div className="p-4">Text Tools</div>,
+    children: [
+      {
+        id: 'text-diff',
+        name: 'Text Diff',
+        icon: Ruler,
+        component: () => <div className="p-4">Text Diff Tool</div>,
+      }
+    ]
   }
 ]
