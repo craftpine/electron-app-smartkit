@@ -109,24 +109,6 @@ export const SAMPLE_TOOLS: Tool[] = [
         component: HtmlToPug,
       },
       {
-        id: 'money-converter',
-        name: 'Money Converter',
-        icon: DollarSign,
-        component: () => <div className="p-4">Money Converter Tool</div>,
-      },
-      {
-        id: 'unit-converter',
-        name: 'Unit Converter',
-        icon: Ruler,
-        component: () => <div className="p-4">Unit Converter Tool</div>,
-      },
-      {
-        id: 'crypto-converter',
-        name: 'Crypto Converter',
-        icon: Bitcoin,
-        component: () => <div className="p-4">Crypto Converter Tool</div>,
-      },
-      {
         id: 'image-converter',
         name: 'Image Converter',
         icon: Image,
