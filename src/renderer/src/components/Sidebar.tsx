@@ -260,6 +260,12 @@ export const SAMPLE_TOOLS: Tool[] = [
         name: 'Text Diff',
         icon: Ruler,
         component: TextDiff,
+      },
+      {
+        id: 'escape/unescape',
+        name: 'Escape/Unescape',
+        icon: Braces,
+        component: () => <div className="p-4">Escape/Unescape</div>,
       }
     ]
   }
