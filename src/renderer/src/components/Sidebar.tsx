@@ -24,6 +24,7 @@ import HashChecksumGenerator from './tools/HashChecksumGenerator'
 import QRCodeGenerator from './tools/QRCodeGenerator'
 import UrlEncoder from './tools/UrlEncoder'
 import TextDiff from './tools/TextDiff'
+import EscapeUnescape from './tools/EscapeUnescape'
 
 type SidebarProps = {
   tools: Tool[]
@@ -265,7 +266,7 @@ export const SAMPLE_TOOLS: Tool[] = [
         id: 'escape/unescape',
         name: 'Escape/Unescape',
         icon: Braces,
-        component: () => <div className="p-4">Escape/Unescape</div>,
+        component: EscapeUnescape,
       }
     ]
   }
