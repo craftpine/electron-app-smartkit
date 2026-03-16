@@ -1,4 +1,4 @@
-import { Archive, Award, BadgeCheck, Bitcoin, Braces, Brackets, Code, DollarSign, FileCode, FileImage, FileText, Fingerprint, Globe, Hash, Image, ImageIcon, KeyRound, Lock, PiIcon, QrCode, Ruler, Shuffle, Type, Unlock, Wand2, Wind } from 'lucide-react'
+import { Archive, Award, BadgeCheck, Braces, Brackets, Code, FileCode, FileImage, FileText, Fingerprint, Globe, Hash, Image, ImageIcon, KeyRound, Lock, PiIcon, QrCode, Ruler, Shuffle, Type, Unlock, Wand2, Wind } from 'lucide-react'
 import { Tool } from '../types/tool'
 import ToolItem from './ToolItem'
 import HtmlToJsx from './tools/HtmlToJsx'
@@ -25,6 +25,7 @@ import QRCodeGenerator from './tools/QRCodeGenerator'
 import UrlEncoder from './tools/UrlEncoder'
 import TextDiff from './tools/TextDiff'
 import EscapeUnescape from './tools/EscapeUnescape'
+import MarkdownPreview from './tools/MarkdownPreview'
 
 type SidebarProps = {
   tools: Tool[]
@@ -272,7 +273,7 @@ export const SAMPLE_TOOLS: Tool[] = [
         id: 'markdown-review',
         name: 'Markdown Review',
         icon: FileText,
-        component: () => <div className="p-4">Markdown Review Tool</div>,
+        component: MarkdownPreview,
       }
     ]
   }

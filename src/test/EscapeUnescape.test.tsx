@@ -109,7 +109,7 @@ describe('EscapeUnescape', () => {
     render(<EscapeUnescape />)
     fireEvent.change(getInput(), { target: { value: 'hello\nworld' } })
     clickEscape()
-    const encoded = getOutput().value
+    const encoded = (getOutput() as any).value
     fireEvent.click(screen.getByText('Switch to Unescape'))
     expect(getInput()).toHaveValue(encoded)
   })
