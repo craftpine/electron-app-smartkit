@@ -84,7 +84,7 @@ export default function Sidebar({ tools, activeTool, onSelectTool }: SidebarProp
 
       {/* Footer */}
       <div className="px-4 py-3 border-t border-gray-200 text-gray-500 text-xs flex-shrink-0">
-        <p>© 2024 Dev Tools</p>
+        <p>© {new Date().getFullYear()} Dev Tools</p>
       </div>
     </div>
   )
@@ -267,6 +267,12 @@ export const SAMPLE_TOOLS: Tool[] = [
         name: 'Escape/Unescape',
         icon: Braces,
         component: EscapeUnescape,
+      },
+      {
+        id: 'markdown-review',
+        name: 'Markdown Review',
+        icon: FileText,
+        component: () => <div className="p-4">Markdown Review Tool</div>,
       }
     ]
   }
