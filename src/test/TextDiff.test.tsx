@@ -1,5 +1,5 @@
-import { render, screen, fireEvent } from '@testing-library/react'
-import { describe, it, expect, beforeEach, vi } from 'vitest'
+import { render, screen, fireEvent, act } from '@testing-library/react'
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import TextDiff from '../renderer/src/components/tools/TextDiff'
 
 describe('TextDiff', () => {
@@ -7,6 +7,10 @@ describe('TextDiff', () => {
     Object.assign(navigator, {
       clipboard: { writeText: vi.fn().mockResolvedValue(undefined) },
     })
+  })
+
+  afterEach(() => {
+    vi.useRealTimers()
   })
 
   it('renders without crashing', () => {
@@ -96,5 +100,24 @@ describe('TextDiff', () => {
     fireEvent.click(screen.getByRole('button', { name: /compare/i }))
     fireEvent.click(screen.getByRole('button', { name: /copy patch/i }))
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith('- hello\n+ world')
+  })
+
+  it('shows copied feedback and reverts after timeout', () => {
+    vi.useFakeTimers()
+
+    render(<TextDiff />)
+    const [originalTA, modifiedTA] = screen.getAllByRole('textbox')
+    fireEvent.change(originalTA, { target: { value: 'hello' } })
+    fireEvent.change(modifiedTA, { target: { value: 'world' } })
+    fireEvent.click(screen.getByRole('button', { name: /compare/i }))
+
+    fireEvent.click(screen.getByRole('button', { name: /copy patch/i }))
+    expect(screen.getByRole('button', { name: /copied!/i })).toBeInTheDocument()
+
+    act(() => {
+      vi.advanceTimersByTime(2000)
+    })
+
+    expect(screen.getByRole('button', { name: /copy patch/i })).toBeInTheDocument()
   })
 })
