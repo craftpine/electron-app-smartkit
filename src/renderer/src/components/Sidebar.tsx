@@ -123,6 +123,12 @@ export const SAMPLE_TOOLS: Tool[] = [
         icon: ImageIcon,
         component: SvgToJsx,
       },
+      {
+        id: 'json-array-to-csv',
+        name: 'JSON Array to CSV',
+        icon: FileCode,
+        component: () => <div className="p-4">JSON Array to CSV</div>,
+      }
     ],
   },
   {
