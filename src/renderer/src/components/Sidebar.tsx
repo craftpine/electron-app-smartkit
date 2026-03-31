@@ -26,6 +26,7 @@ import UrlEncoder from './tools/UrlEncoder'
 import TextDiff from './tools/TextDiff'
 import EscapeUnescape from './tools/EscapeUnescape'
 import MarkdownPreview from './tools/MarkdownPreview'
+import JsonArrayToCsv from './tools/JsonArrayToCsv'
 
 type SidebarProps = {
   tools: Tool[]
@@ -127,7 +128,7 @@ export const SAMPLE_TOOLS: Tool[] = [
         id: 'json-array-to-csv',
         name: 'JSON Array to CSV',
         icon: FileCode,
-        component: () => <div className="p-4">JSON Array to CSV</div>,
+        component: JsonArrayToCsv,
       }
     ],
   },
